@@ -1,0 +1,37 @@
+.header
+{
+	background-color: red;
+	height:50px;	
+}
+.loginSection
+{
+	background-color: orange;
+	height:70px;	
+}
+.mainbody
+{
+	background-color: lightblue;
+	height:90%;	
+}
+
+.footer
+{
+	background-color: lightgreen;
+	height:5%;	
+}
+
+.categoryMenu
+{
+	float:left;	
+}
+
+.emptySection
+{
+	float:left;
+}
+
+.loginbtncntr
+{
+	width:25%;
+	float:right;
+}
