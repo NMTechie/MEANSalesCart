@@ -19,9 +19,9 @@
 					Empty Section
 				</div>
 				<div id="loginbtncntr" class="loginbtncntr">
-					<form ng-controller="loginController" novalidate>
-						<label>Name: <input type="text" name="userId" id="txtUserId"/></label><br />
-						<label>Password: <input type="password" name="pwd" id="txtPwd"/></label><br/>						
+					<form ng-controller="loginController" novalidate ng-submit="Validate(credential)">
+						<label>Name: <input type="text" name="userId" id="txtUserId" ng-model="credential.userid"/></label><br />
+						<label>Password: <input type="password" name="pwd" id="txtPwd" ng-model="credential.password"/></label><br/>						
 						<input type="submit" id="loginBtn" value="Login"/>
 					</form>
 				</div>
