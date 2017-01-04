@@ -1,4 +1,5 @@
 var app = angular.module("SalesCartAppModule",[]);
+
 app.constant("AUTHENTICATION_STATE",{
   loginSuccess: "auth-login-success",
   loginFailed: "auth-login-failed",
@@ -8,3 +9,4 @@ app.constant("AUTHENTICATION_STATE",{
   notAuthorized: "auth-not-authorized"
 }
 );
+ 
