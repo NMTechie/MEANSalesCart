@@ -10,11 +10,16 @@ namespace MyClassicDataAccess.User
 {
     public class UserDAL
     {
-        public List<Users> ValidateUser(string userId)
+        public bool ValidateUser(string userId,string pwd)
         {
-            var p =  GetDBFactory.CreateFactory(DBChoice.XML).
-                CreateQueryProvider().GetDataFromSelection<XElement>("//user[@id='Nilesh']");
-            return new List<Users>();
+            var isValidUser = false;
+            var p = GetDBFactory.CreateFactory(DBChoice.XML).
+                CreateQueryProvider().GetDataFromSelection<XElement>("//user[@id='" + userId + "' and @password='" + pwd + "']");
+            if (p != null)
+            {
+                isValidUser = p.First().Attribute("name").Value.Length > 0 ? true : false;
+            }
+            return isValidUser; 
         }
     }
 }
