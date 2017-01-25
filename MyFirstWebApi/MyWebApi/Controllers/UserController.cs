@@ -12,7 +12,7 @@ namespace MyWebApi.Controllers
 {
     public class UserController : ApiController
     {
-        [HttpGet]
+        [HttpPost]
         public bool ValidateUser(string userId,string pwd)
         {
             return new UserDAL().ValidateUser(userId,pwd);

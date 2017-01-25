@@ -24,7 +24,20 @@ app.controller("loginController",function($scope,AUTHENTICATION_STATE,AUTHENTICA
 /*
 *
 */
-app.factory("AUTHENTICATION_SERVICE",function(AUTHENTICATION_STATE){
-		return AUTHENTICATION_STATE.loginSuccess+" for Nilesh";
+app.factory("AUTHENTICATION_SERVICE",function($http,AUTH_URL){
+/*The authService is the object instance which will be return as service from this factory receipe*/
+		var authService = {};
+		authService.Login = function(userCredential)
+		{
+			$http.post(AUTH_URL,userCredential).then(function succValidate(response)
+			{
+				alert("success");
+			}
+			,function errValidate(response)
+			{
+				alert("fail");
+			});
+		}
+		return authService;
 }
 );
