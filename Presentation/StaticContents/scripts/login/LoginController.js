@@ -14,10 +14,8 @@ app.controller("loginController",function($scope,AUTHENTICATION_STATE,AUTHENTICA
 		password : ""
 	};
 	$scope.Validate = function(userCredential){
-		alert(userCredential.userid);
-		alert(userCredential.password);
-	}
-	alert(AUTHENTICATION_SERVICE);
+		AUTHENTICATION_SERVICE.Login(userCredential);
+	}	
 }
 );
 
@@ -28,14 +26,22 @@ app.factory("AUTHENTICATION_SERVICE",function($http,AUTH_URL){
 /*The authService is the object instance which will be return as service from this factory receipe*/
 		var authService = {};
 		authService.Login = function(userCredential)
-		{
+		{	
 			$http.post(AUTH_URL,userCredential).then(function succValidate(response)
 			{
-				alert("success");
+				alert(response.data);
+				alert(response.status);
+				alert(response.headers);
+				alert(response.config);
+				alert(response.statusText);
 			}
 			,function errValidate(response)
 			{
-				alert("fail");
+				alert(response.data);
+				alert(response.status);
+				alert(response.headers);
+				alert(response.config);
+				alert(response.statusText);
 			});
 		}
 		return authService;

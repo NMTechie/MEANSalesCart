@@ -15,7 +15,7 @@ namespace MyClassicDataAccess.User
             var isValidUser = false;
             var p = GetDBFactory.CreateFactory(DBChoice.XML).
                 CreateQueryProvider().GetDataFromSelection<XElement>("//user[@id='" + userId + "' and @password='" + pwd + "']");
-            if (p != null)
+            if (p != null && p.Any())
             {
                 isValidUser = p.First().Attribute("name").Value.Length > 0 ? true : false;
             }

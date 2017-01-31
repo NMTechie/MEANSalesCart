@@ -9,5 +9,5 @@ app.constant("AUTHENTICATION_STATE",{
   notAuthorized: "auth-not-authorized"
 }
 );
-app.value('AUTH_URL','http://localhost:63171/MyWebApi/user/Validateuser');
+app.value('AUTH_URL','http://localhost:63171/MyWebApi/user/Validateuser?userId=Nilesh&Password=Password1');
  

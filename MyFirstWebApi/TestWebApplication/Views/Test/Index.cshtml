@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "http://localhost:63171/MyWebApi/user/Validateuser",
+            data: {
+                "userId": "Nilesh"
+            },
+            type: "post",
+            success: function (msg) {
+                alert(msg);
+            }
+        });
+    })
+
+</script>
+</html>
