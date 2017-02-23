@@ -22,26 +22,20 @@ app.controller("loginController",function($scope,AUTHENTICATION_STATE,AUTHENTICA
 /*
 *
 */
-app.factory("AUTHENTICATION_SERVICE",function($http,AUTH_URL){
+app.factory("AUTHENTICATION_SERVICE",function($http,AUTH_URL,SESSION_STORE_SERVICE){
 /*The authService is the object instance which will be return as service from this factory receipe*/
 		var authService = {};
 		authService.Login = function(userCredential)
 		{	
 			$http.post(AUTH_URL,userCredential).then(function succValidate(response)
 			{
-				alert(response.data);
+				SESSION_STORE_SERVICE.Save(response.data.id,userCredential.userid);
 				alert(response.status);
-				alert(response.headers);
-				alert(response.config);
-				alert(response.statusText);
 			}
-			,function errValidate(response)
+			,
+			function errValidate(response)
 			{
-				alert(response.data);
 				alert(response.status);
-				alert(response.headers);
-				alert(response.config);
-				alert(response.statusText);
 			});
 		}
 		return authService;

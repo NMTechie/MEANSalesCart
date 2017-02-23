@@ -9,5 +9,27 @@ app.constant("AUTHENTICATION_STATE",{
   notAuthorized: "auth-not-authorized"
 }
 );
-app.value('AUTH_URL','http://localhost:63171/MyWebApi/user/Validateuser?userId=Nilesh&Password=Password1');
+
+app.factory("SESSION_STORE_SERVICE",function(){
+	var sessionService = {};
+	//
+	sessionService.Save = function(identifier,dataToSave){
+		sessionStorage.setItem(identifier, dataToSave);
+	}
+	//
+	sessionService.GetValue = function(){
+		return sessionStorage.getItem(identifier);
+	}
+	//
+	sessionService.Remove = function(identifier){
+		sessionStorage.removeItem(identifier);
+	}
+	//
+	sessionService.RemoveAll = function(){
+		sessionStorage.clear();
+	}
+	return sessionService;
+}
+);
+app.value('AUTH_URL','http://localhost:63171/MyWebApi/user/Validateuser');
  
