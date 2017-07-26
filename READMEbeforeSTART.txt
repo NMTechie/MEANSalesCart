@@ -15,6 +15,8 @@ The proxy settings :-
 
 detect proxy settings :- run the command:- reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentV
 ersion\Internet Settings" | find /i "proxyserver"
+
+In Cognizant machine the path is "C:\Users\152089\.gitconfig".
 -----------------------------------------------------------------------------------------------------------------------------
 Angular.js
 -----------------------------------------------------------------------------------------------------------------------------
